@@ -16,9 +16,6 @@ const routes: Routes = [
     {path:"createstudents",loadChildren:()=>import('./student/student.module').then(m=>m.StudentModule)},
     {path:"createteachers",loadChildren:()=>import('./teacher/teacher.module').then(m=>m.TeacherModule)},
     {path:"teachers",component:TeachersComponent},
-    {path:"students",component:StudentsComponent},
-    {path:"studentdetails/:id",component:StudentdetailsComponent},
-    {path:"editstudent/:id",component:CreatestudentsComponent},
     {path:"",component:HomeComponent}
   ]},
   {path:"",component:LoginComponent}

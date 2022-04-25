@@ -10,10 +10,10 @@ import { StudentService } from 'src/app/student.service';
 export class StudentsComponent implements OnInit {
   students:any;
   view(id:any){
-    this.router.navigateByUrl("/dashboardc/studentdetails"+"/"+id)
+    this.router.navigateByUrl("/dashboardc/createstudents/studentdetails"+"/"+id)
   }
   edit(id:any){
-    this.router.navigateByUrl("/dashboardc/editstudent"+"/"+id)
+    this.router.navigateByUrl("/dashboardc/createstudents/editstudent"+"/"+id)
   }
   delet(id:any){
     this.studentService.deletEmployee(id).subscribe(
