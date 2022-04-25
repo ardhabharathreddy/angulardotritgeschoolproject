@@ -1,0 +1,91 @@
+<div class="parent">
+    <form class="formclass" [formGroup]="studentForm">
+        <div>
+            <caption>Students&nbsp;Regestration</caption>
+        </div>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input formControlName="name" type="text" id="name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" formControlName="id" id="id" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="age">age:</label>
+            <input formControlName="age" type="text" id="age" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="class">class:</label>
+            <input formControlName="class" type="text" id="class" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="section">section:</label>
+            <input formControlName="section" type="text" id="section" class="form-control">
+        </div>
+        <div class="form-group">
+            <div>
+                <caption>Type</caption>
+            </div>
+            <label for="residential">Residential:</label>
+            <input type="radio" formControlName="type" id="residential" value="residential"><br>
+            <label for="dayScholar">Day Scholar:</label>
+            <input type="radio" formControlName="type" id="dayScholar" value="dayScholar"><br>
+            <label for="distance">distance:</label>
+            <input type="radio"  formControlName="type" id="distance" value="distance">
+        </div>
+        <div class="form-group" *ngIf="studentForm.get('type')?.value=='residential'">
+            <label for="hostelFee">Hostel Fee:</label>
+            <input type="text" fromControlName="hostelFee" id="hostelFee" class="form-control">
+        </div>
+        <div class="form-group" *ngIf="studentForm.get('type')?.value=='dayScholar'">
+            <label for="busFee">Bus Fee:</label>
+            <input type="text" formControlName="busFee" id="busFee" class="form-control">
+        </div>
+        <div class="form-group" *ngIf="studentForm.get('type')?.value=='distance'">
+            <label for="distanceFee">Distance Fee:</label>
+            <input type="text" formControlName="distanceFee" id="distanceFee" class="form-control">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-light" (click)="add()">Add Class</button>
+        </div>
+        <div formArrayName="percentage">
+            <div>
+                <caption>Percentage</caption>
+            </div>
+            <div *ngFor="let percentage of percentageFormArray.controls;let i=index">
+                <div formGroupName="{{i}}">
+                    <div class="form-group">
+                        <label>Class:</label>
+                      <input type="text" class="form-control" formControlName="class">
+                    </div>
+                    <div class="form-group">
+                        <label>Percentage:</label>
+                        <input type="text" class="form-control" formControlName="percentage">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-light" (click)="delet(i)">Delet Class</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div  formGroupName="address">
+            <div>
+                <caption>Address</caption>
+            </div>
+            <div class="form-group">
+                <label>Pin:</label>
+                <input type="text" formControlName="pin" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>AddressLine</label>
+                <input type="text" formControlName="addressLine" class="form-control">
+            </div>
+            
+        </div>
+        <div class="form-group buttons">
+            <button class="btn btn-light" (click)="submit()">Submit</button>
+        </div>
+    </form>
+</div>
+<pre>{{student|json}}</pre>

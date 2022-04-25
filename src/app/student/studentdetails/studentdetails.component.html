@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <h5>Name</h5>
+            </div>
+            <div class="col">
+                <h6>:{{student.name}}</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>Id</h5>
+            </div>
+            <div class="col">
+                <h6>:{{student.id}}</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>Age</h5>
+            </div>
+            <div class="col">
+                <h6>:{{student.age}}</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>Class</h5>
+            </div>
+            <div class="col">
+                <h6>:{{student.class}}</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>Section</h5>
+            </div>
+            <div class="col">
+                <h6>:{{student.section}}</h6>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <h5>Address Line</h5>
+            </div>
+            <div class="col">
+                <h6>:{{student.address.addressLine}}</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>PinCode</h5>
+            </div>
+            <div class="col">
+                <h6>:{{student.address.pin}}</h6>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let percentage of student.percentage"> 
+                <td>{{percentage.percentage}</td>
+                <td>{{percentage.class}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row buttons">
+   <button class="btn btn-primary" (click)="prev(student.id)">Prev</button>
+   <button class="btn btn-primary" (click)="next(student.id)">Next</button>
+</div>

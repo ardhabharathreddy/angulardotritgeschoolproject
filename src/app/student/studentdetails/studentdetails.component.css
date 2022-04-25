@@ -1,0 +1,7 @@
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.row{
+    margin: 1em;
+}

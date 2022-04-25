@@ -1,0 +1,25 @@
+.parent{
+    width:100vw;
+    height:100vh;
+    background-image: url(school.jfif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}    
+.btns{
+    background-color: aqua;
+    color: white;
+}
+.buttons{
+    font-weight: 900;
+    padding-right: 2em;
+    padding-left: 2em;
+}
+.submit-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,24 @@
+<p>createteachers works!</p>
+<div class="parent">
+    <form class="formclass" [formGroup]="teacherForm">
+        <div class="form-group">
+            <label for="createdAt">Created At:</label>
+            <input formControlName="createdAt" type="text" class="form-control" id="createdAt">
+        </div>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input formControlName="name" type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input formControlName="subject" type="text" class="form-control" id="subject">
+        </div>
+        <div class="form-group">
+            <label for="experience">Experience:</label>
+            <input formControlName="experience" type="text" class="form-control" id="experience">
+        </div>
+        <div class="form-group buttons">
+            <button class="btn btn-light" (click)="submit()">Submit</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,48 @@
+<div class="parent">
+    <div class="nav-bar">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark nav-bar">
+            <ul class="navbar-nav">
+              <div class="menu">
+                <li class="nav-item active">
+                    <h6 class="nav-link">MySchool</h6>
+                </li>
+                <li class="nav-item">
+                    <h6 routerLink="home" class="nav-link">Home</h6>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <h6 class="nav-link" data-toggle="dropdown">Create</h6>
+                        <div class="dropdown-menu dropdown-content">
+                            <h6 routerLink="createstudents" class="dropdown-item">Student</h6>
+                            <h6 routerLink="createteachers" class="dropdown-item">Teacher</h6>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <h6 class="nav-link" data-toggle="dropdown">View</h6>
+                        <div class="dropdown-menu dropdown-content">
+                            <h6 routerLink="students" class="dropdown-item">Student</h6>
+                            <h6 routerLink="teachers" class="dropdown-item">Teacher</h6>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <h6 class="nav-link">Page2</h6>
+                </li>
+                <li class="nav-item">
+                    <h6 class="nav-link">Page3</h6>
+                </li>
+              </div>
+              <div class="logout-button">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-light" (click)="logout()">Logout</button>
+                </li>
+              </div>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
