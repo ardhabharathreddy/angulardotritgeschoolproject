@@ -20,5 +20,8 @@ export class StudentService {
   {
     return this.httpClient.delete("https://6128991386a213001729f9df.mockapi.io/test/v1/students"+"/"+id);
   }
+  putStudent(value:any){
+    return this.httpClient.put("https://6128991386a213001729f9df.mockapi.io/test/v1/students"+"/"+value.id,value)
+  }
   constructor(private httpClient:HttpClient) { }
 }

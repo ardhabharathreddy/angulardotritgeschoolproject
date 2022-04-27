@@ -46,10 +46,19 @@ export class CreatestudentsComponent implements OnInit {
     this.percentageFormArray.removeAt(i);
   }
   submit(){
+    if(this.queryParam!=null)
+    {
+      this.studentService.putStudent(this.studentForm.value).subscribe(
+        (data:any)=>{alert("Edited")},
+        (error:any)=>{alert("unable to edit")}
+      )
+    }
+    else{
     this.studentService.postStudent(this.studentForm.value).subscribe(
       (data:any)=>{alert("Student posted successfully")},
       (error:any)=>{alert("Failed to push students")}
     )
+    }
   }
   constructor(private studentService:StudentService,private activatedRoute:ActivatedRoute) {
     this.studentForm.get('type')?.valueChanges.subscribe(
@@ -80,7 +89,7 @@ export class CreatestudentsComponent implements OnInit {
         (data:any)=>{this.studentService.getStudentById(data.id).subscribe(
           (data:any)=>{
             this.studentForm.patchValue(data);
-
+            
             this.student=data
                     
           },
